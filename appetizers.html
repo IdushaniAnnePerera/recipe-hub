@@ -1,49 +1,126 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-  
+  <meta charset="UTF-8">
   <title>Appetizer Recipes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffaf5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #c0392b;
+    }
+
+    .recipe {
+      background-color: #fdebd0;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #8e44ad;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    button {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background-color: #922b21;
+    }
+
+    .steps {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <h1>Appetizer Recipes</h1>
 
-  <h2>Bruschetta</h2>
-  <h3>Ingredients:</h3>
-  <ul>
-    <li>4 slices of baguette</li>
-    <li>2 ripe tomatoes, diced</li>
-    <li>2 cloves garlic, minced</li>
-    <li>Fresh basil leaves</li>
-    <li>2 tbsp olive oil</li>
-    <li>Salt and pepper to taste</li>
-  </ul>
-  <h3>Steps:</h3>
-  <ol>
-    <li>Toast the baguette slices until golden brown.</li>
-    <li>Mix tomatoes, garlic, basil, olive oil, salt, and pepper in a bowl.</li>
-    <li>Top toasted bread with the tomato mixture.</li>
-    <li>Serve immediately and enjoy!</li>
-  </ol>
+  <!-- Bruschetta -->
+  <div class="recipe">
+    <h2>Bruschetta</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>4 slices of baguette</li>
+      <li>2 ripe tomatoes, diced</li>
+      <li>2 cloves garlic, minced</li>
+      <li>Fresh basil leaves</li>
+      <li>2 tbsp olive oil</li>
+      <li>Salt and pepper to taste</li>
+    </ul>
+    <button onclick="toggleSteps('bruschettaSteps')">Show/Hide Steps</button>
+    <div id="bruschettaSteps" class="steps">
+      <h3>Steps:</h3>
+      <ol>
+        <li>Toast the baguette slices until golden brown.</li>
+        <li>Mix tomatoes, garlic, basil, olive oil, salt, and pepper in a bowl.</li>
+        <li>Top toasted bread with the tomato mixture.</li>
+        <li>Serve immediately and enjoy!</li>
+      </ol>
+    </div>
+  </div>
 
-  <h2>Stuffed Mushrooms</h2>
-  <h3>Ingredients:</h3>
-  <ul>
-    <li>12 large button mushrooms</li>
-    <li>1/4 cup grated Parmesan cheese</li>
-    <li>2 cloves garlic, minced</li>
-    <li>2 tbsp chopped parsley</li>
-    <li>1/4 cup breadcrumbs</li>
-    <li>2 tbsp olive oil</li>
-    <li>Salt and pepper to taste</li>
-  </ul>
-  <h3>Steps:</h3>
-  <ol>
-    <li>Preheat oven to 375°F (190°C).</li>
-    <li>Remove stems from mushrooms and chop them finely.</li>
-    <li>Mix chopped stems with cheese, garlic, parsley, breadcrumbs, olive oil, salt, and pepper.</li>
-    <li>Stuff each mushroom cap with the mixture.</li>
-    <li>Bake for 20 minutes or until golden on top.</li>
-    <li>Serve warm.</li>
-  </ol>
+  <!-- Stuffed Mushrooms -->
+  <div class="recipe">
+    <h2>Stuffed Mushrooms</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>12 large button mushrooms</li>
+      <li>1/4 cup grated Parmesan cheese</li>
+      <li>2 cloves garlic, minced</li>
+      <li>2 tbsp chopped parsley</li>
+      <li>1/4 cup breadcrumbs</li>
+      <li>2 tbsp olive oil</li>
+      <li>Salt and pepper to taste</li>
+    </ul>
+    <button onclick="toggleSteps('mushroomSteps')">Show/Hide Steps</button>
+    <div id="mushroomSteps" class="steps">
+      <h3>Steps:</h3>
+      <ol>
+        <li>Preheat oven to 375°F (190°C).</li>
+        <li>Remove stems from mushrooms and chop them finely.</li>
+        <li>Mix chopped stems with cheese, garlic, parsley, breadcrumbs, olive oil, salt, and pepper.</li>
+        <li>Stuff each mushroom cap with the mixture.</li>
+        <li>Bake for 20 minutes or until golden on top.</li>
+        <li>Serve warm.</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function toggleSteps(id) {
+      const steps = document.getElementById(id);
+      if (steps.style.display === "none" || steps.style.display === "") {
+        steps.style.display = "block";
+      } else {
+        steps.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
